@@ -2,6 +2,14 @@ sudo: required
 services:
     - docker
 
+addons:
+    apt:
+        sources:
+            - google-chrome
+        
+        packages:
+            - google-chrome-stable
+
 before_install:
     - docker build -t jy/drl -f Dockerfile.dev .
   
