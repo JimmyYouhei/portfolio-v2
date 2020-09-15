@@ -2,16 +2,11 @@ sudo: required
 services:
     - docker
 
-dist : trusty
-
-addons :
-    chrome: stable
-
 before_install:
     - docker build -t jy/drl -f Dockerfile.dev .
   
 script : 
-    - docker run -e CI=true jy/drl npm run test -- --no-watch --no-progress
+    - docker run -e jy/drl npm run test
 
 deploy :
     provider : elasticbeanstalk
