@@ -2,11 +2,6 @@ sudo: required
 services:
     - docker
 
-dist : trusty
-
-addons :
-    chrome: stable
-
 before_install:
     - docker build -t jy/drl -f Dockerfile.dev .
   
